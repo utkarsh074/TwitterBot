@@ -12,14 +12,15 @@ CONSUMER_SECRET = ''
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(Access_token, Access_token_secret)
 api = tweepy.API(auth)
-TweetData = TweetFinal.final_tweet(self)
-#print(TweetData)
 
-api.update_status(TweetData)
+#final_tweet return will return a poem from assocaiated JSON file
+TweetData = TweetFinal.final_tweet(self)
 
 try:
     api.verify_credentials()
     print("Authentication OK")
-
+    
+    #Tweet
+    api.update_status(TweetData)
 except:
     print("Error during authentication")
