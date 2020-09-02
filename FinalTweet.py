@@ -1,10 +1,12 @@
 import json
 
-
+#This class contains method to identify and pull poem from a locally maintained JSON file 
 class TweetFinal:
     def final_tweet(self):
         finalTweet = ''
+        #path where I have compiled poems from different sources in a way structured way i.e. JSON
         final_path = 'E:\\FinalData\\Tweet'
+        #To keep track of poems which have been tweeted earlier
         id_path = 'E:\\FinalData\\Config.txt'
         with open(id_path, 'r') as fp:
             CurrentpoemId = fp.read()
